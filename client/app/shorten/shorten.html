@@ -1,5 +1,16 @@
-<div id='container'>
+<div class='navigation'>
+  <ul>
+    <li><a href='#/links' class='index'>All Links</a></li>
+    <li><a href='#/shorten' class='create'>Shorten</a></li>
+    <li><a href='#' class='logout'> Logout </a></li>
+  </ul>
+  </div>
+  <div id='container' ng-controler="ShortenController">
 <!-- Your code here -->
+  <form>
+    <input class='text' type='text' name='url'>
+    <button>add</button>
+  </form>
 
 </div>
 

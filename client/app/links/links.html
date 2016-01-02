@@ -1,3 +1,22 @@
+  <div class='navigation'>
+  <ul>
+    <li><a href='#/links' class='index'>All Links</a></li>
+    <li><a href='#/shorten' class='create'>Shorten</a></li>
+    <li><a href='#' class='logout'> Logout </a></li>
+  </ul>
+  </div>
 <div id='container' ng-controller="LinksController">
   <!-- Your html here -->
+  <div class="info"> 
+    <div class='visits' ng-model="Link.visits"><span class='count'>{{visits}}</span>Visits</div>
+    <div class='title' ng-model="Link.title">{{title}}</div>
+    <div class='original' ng-model="Link.url">{{url}}</div>
+    <a ng-href='{{base_url}}/{{code}}'>{{base_url}}{{code}}</a>
+  </div>
+  <form>
+      <input class='text' type='text' name='url' placeholder="filter">
+  </form>
+  <!-- <img class='spinner' src='/spiffygif_46x46.gif'> -->
+  <div class='message'></div>
 </div>
+</body>
