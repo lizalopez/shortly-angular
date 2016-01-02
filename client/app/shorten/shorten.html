@@ -8,8 +8,8 @@
   <div id='container' ng-controler="ShortenController">
 <!-- Your code here -->
   <form>
-    <input class='text' type='text' name='url'>
-    <button>add</button>
+    <input ng-model='data'>
+    <button ng-click="addLink()">add</button>
   </form>
 
 </div>
