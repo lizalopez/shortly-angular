@@ -1,17 +1,32 @@
-<div class='navigation'>
-  <ul>
-    <li><a href='#/links' class='index'>All Links</a></li>
-    <li><a href='#/shorten' class='create'>Shorten</a></li>
-    <li><a href='#' class='logout'> Logout </a></li>
-  </ul>
-  </div>
-  <div id='container' ng-controler="ShortenController">
+<div id='container'>
 <!-- Your code here -->
-  <form>
-    <input ng-model='data'>
-    <button ng-click="addLink()">add</button>
-  </form>
 
-</div>
+  <nav class="navigation">
+    <ul>
+      <li>
+          <a href="#/links">Links</a>
+      </li>
+       <li>
+          <a class='selected' href="#/shorten">Shorten</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="creator">
+    <form name='shorty' ng-submit="addLink()" novalidate>
+      <input name='link' type="url"
+        ng-model="link.url"
+        placeholder="Enter Your Link!!!" required
+        ng-class="{'error': shorty.$invalid && shorty.$dirty}"/>
 
-
+      <button type="submit" value="Shorten" ng-disabled='shorty.$invalid'>
+        add link
+      </button>
+    </form>
+    <div ng-if='shorty.link.$error.required && shorty.$dirty' class="message">
+      <h2>Dude, Url Required</h2>
+    </div>
+    <div ng-show='shorty.link.$error.url && shorty.$dirty' class="message">
+      <h2>Bro, Not a valid url</h2>
+    </div>
+  </div>
+  </div>

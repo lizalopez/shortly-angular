@@ -6,7 +6,7 @@ angular.module('shortly.shorten', [])
   $scope.mostRecentLinks = [];
   $scope.addLink = function () {
     var link = $scope.link;
-    $scope.link.toString();
+    $scope.link = '';
     Links.addOne(link).then(function (data) {
       $scope.mostRecentLinks = [data];
     });
