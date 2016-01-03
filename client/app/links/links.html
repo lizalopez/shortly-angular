@@ -3,7 +3,7 @@
     <ul>
       <li><a href='#/links' class='index'>All Links</a></li>
       <li><a href='#/shorten' class='create'>Shorten</a></li>
-      <li><a href='#/logout' class='logout'>Logout</a></li>
+      <li><a href='/logout' class='logout'>Logout</a></li>
     </ul>
   </div>
   <div style="padding:10px;"><input placeholder="filter" ng-model="search"></div>
@@ -15,7 +15,7 @@
           <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
           <div class='title'>{{link.title}}</div>
           <div class='original'>{{link.url}}</div>
-          <a href='http:/localhost:3000/api/links/{{link.code}}'>{{link.base_url}}/api/links/{{link.code}}</a>
+          <a href={{link.base_url}}/{{link.code}}>{{link.base_url}}/api/links/{{link.code}}</a>
         </div>
 
       </li>
